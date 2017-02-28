@@ -34,8 +34,8 @@ Here's a list of which technologies I'm using to achieve the above mentioned goa
 The above will be running on a **Shuttle XPC XH61V**, with an Intel Core **I3**-3240, Crucial SoDIMM DDR3 **8 GB** 1333 MHz and a Kingston **60 GB SSD** 2.5" SATA3 V300 drive.
 The important part is having **2 Gigabit** network **interfaces**, 1 for the wan, the other for the local lan.
 
-![Shuttle Front](/content/images/2014/Apr/IMG_20140411_181317.jpg)
-![Shuttle Back](/content/images/2014/Apr/IMG_20140411_181418.jpg)
+![Shuttle Front](/images/IMG_20140411_181317.jpg)
+![Shuttle Back](/images/IMG_20140411_181418.jpg)
 
 Since I need to provide clients connecting to the internal lan with an IP address (and the rest of the relevant networking information), and like to have them be able to use a **local DNS domain** to help them identify themselves, I've opted for dnsmasq which is very simple to use, but also handles both DHCP and DNS in one easy to use setup.
 

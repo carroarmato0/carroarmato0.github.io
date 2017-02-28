@@ -6,7 +6,7 @@ tags:
 - ubuntu-linux-dell-latitude-nvidia
 ---
 
-![Dell 6430](/content/images/2013/Dec/latitude_6430_backlit_keyboard.jpg)
+![Dell 6430](/images/latitude_6430_backlit_keyboard.jpg)
 
 Here’s a list of some of the fixes I made to overcome most of the hassles encountered so people can use their system optimally with that driver.
 
@@ -45,7 +45,7 @@ Fix the Brightness keys not working with the 310 Nvidia Driver
 
 Open the Nvidia X Server Settings app (nvidia-settings from a terminal).
 
-![Nvidia Settings](/content/images/2013/Dec/nvidia_settings.png)
+![Nvidia Settings](/images/nvidia_settings.png)
 
 You need to let the Nvidia program write the xorg.conf file for you, as by default none is generated or present in /etc/X11/
 

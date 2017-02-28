@@ -11,7 +11,7 @@ tags:
 
 I recently purchased a **R.A.T. 5** since my previous mouse had failed to help me when I was at a shortage of ammo and within an inch of my life playing [_Metro: Last Light_](http://enterthemetro.com/), specifically, the left button would fail to make contact.
 
-![rat5](/content/images/2013/Dec/SAITEKR_A_T5.jpg)
+![rat5](/images/SAITEKR_A_T5.jpg)
 
 Put aside the reason why I threw my wallet at a relatively expensive mouse, let's keep it at the abundance of buttons, but most important to me: it just feels **right** in the palm of my hand.
 
