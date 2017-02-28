@@ -1,0 +1,23 @@
+---
+layout: post
+title: New Blog
+date: '2013-09-23 10:00:00'
+tags:
+- pelican
+- blogging
+---
+
+Hello everyone, this is *yet* another attempt of mine to keep an updated blog.
+
+I still have an account on wordpress, but this time, I wanted to have something with less overhead.
+
+I noticed a colleague of mine using [Pelican](http://blog.getpelican.com/), liked the idea and just went ahead with trying it.
+
+The installation was pretty straightforward and it was easy to understand the workflow to manage the content.
+
+I've currently set it up to detect changes in the content folder so that it automatically regenerates the html of the blog.
+
+With the regeneration in place upon change, I created a repo out of the content folder. So if you're reading this, it means
+I was able to git push this article from my laptop to my Pelican blog.
+
+Next on my list: import (what I deem are) the most popular articles from my old blog.
