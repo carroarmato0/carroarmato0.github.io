@@ -117,6 +117,42 @@ EXT4 supports online increases, so this operation will not cause downtime.
 You can have the filesystem increase with the LV at the same time by using the `-r` option in lvextend or lvresize.
 
 
+Extending an LV disk in the the VM
+---
+We assume that on the hypervisor level you have a Logical Volume attached to a virtual machine as a disk.
+
+You can extend the LV through the usual command:
+
+```
+lvextend -L +10G /dev/mapper/vg_name_lv_name
+```
+
+Next, you need a way to signal the VM that something changed to the disk is has attached.
+
+First we figure out what the block device name is of the LV we attached to the VM:
+
+```
+virsh qemu-monitor-command <name of the vm> info block --hmp
+drive-virtio-disk0: removable=0 io-status=ok file=/dev/<volume group>/<name of vm> ro=0 drv=raw encrypted=0
+drive-virtio-disk1: removable=0 io-status=ok file=/dev/<volume group>/<name of vm> ro=0 drv=raw encrypted=0
+drive-virtio-disk2: removable=0 io-status=ok file=/dev/<volume group>/<name of vm> ro=0 drv=raw encrypted=0
+```
+
+Next, we signal the VM about our changed disk (in this case, we changed the size to 40G and it's disk2):
+
+```
+virsh qemu-monitor-command <name of vm> block_resize drive-virtio-disk2 40G --hmp
+```
+
+You you look at dmesg inside the VM, you can confirm that the action succeeded by finding the following:
+
+```
+[2857759.858238] virtio_blk virtio3: new size: 83886080 512-byte logical blocks (42.9 GB/40.0 GiB)
+[2857759.870167] vdc: detected capacity change from 32212254720 to 42949672960
+```
+
+Depending on whether you are working with a raw data disk or the disk contains a partition you will either need to just resize the filesystem on the disk to fit within its new boundaries, or have to increase the partition first.
+
 Conclusion
 ---
 
